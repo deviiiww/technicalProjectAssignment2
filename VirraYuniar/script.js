@@ -571,8 +571,9 @@ const movies = [
   }
   console.log(getMovies('la'));
   
-  function showMovies(keyword = ''){
+  function showMovies(keyword = document.getElementById('search').value){
     const moviesList = getMovies(keyword);
+    document.getElementById('list-movies').innerHTML="";
     for(let i=0;i<moviesList.length;i++){
       document.getElementById('list-movies').innerHTML+=
         `<div class="col-12 col-sm-6 col-md-4 p-5 pb-2 d-flex justify-content-center">
@@ -595,4 +596,4 @@ const movies = [
       </div>`
     }
   }
-  showMovies('batman');
+  showMovies('');
